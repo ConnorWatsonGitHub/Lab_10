@@ -40,7 +40,7 @@ function error(e) {
 
 let weatherPara = document.createElement("p");
 weatherPara.textContent = "Loading Weather Information...";
-header.appendChild(weatherPara);;
+header.appendChild(weatherPara);
 //Making sure the page has loaded before displaying the weather
 let body = document.querySelector("body");
 body.addEventListener("load", navigator.geolocation.getCurrentPosition(getWeather, error));
