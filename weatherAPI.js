@@ -22,10 +22,7 @@ function getWeather(position) {
         Http.onload = (e) => {
             //saving the text form the response as a JSON object
             let weatherInfo = JSON.parse(Http.responseText);
-            let weatherPara = document.createElement("p");
             weatherPara.textContent = "Local Temperature: " + weatherInfo.temp_c  +  "\u00B0C" + " Wind Speed: " + weatherInfo.windspd_kmh + "km/hr " + weatherInfo.winddir_compass;
-            header.appendChild(weatherPara);
-
         };
     } catch (e) {
         //calls the error function and passes the exception 
@@ -36,14 +33,14 @@ function getWeather(position) {
 
 //will display this if there is an error while getting current position or getting the weather data
 function error(e) {
-    let errorMsg = document.createElement("p");
-    errorMsg.className = "error";
-    errorMsg.textContent = "An Error Occured While Getting Weather: " + e.message;
-    header.appendChild(errorMsg);
+    weatherPara.className = "error";
+    weatherPara.textContent = "An Error Occured While Getting Weather: " + e.message;
 }
 
 
-
+let weatherPara = document.createElement("p");
+weatherPara.textContent = "Loading Weather Information...";
+header.appendChild(weatherPara);;
 //Making sure the page has loaded before displaying the weather
 let body = document.querySelector("body");
 body.addEventListener("load", navigator.geolocation.getCurrentPosition(getWeather, error));
