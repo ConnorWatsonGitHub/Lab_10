@@ -1,0 +1,30 @@
+main {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 5rem;
+}
+
+
+main article {
+    border: 1px solid black;
+    box-shadow: 0 2px 14px grey;
+    padding: 2.5%;
+    width: 15%
+}
+
+article img {
+    display: block;
+    height: 150px;
+    width: 150px;
+    margin: auto;
+}
+
+h1, h2, header p{
+    text-align: center;
+
+}
+
+.error {
+    color: red;
+}
